@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block titulo %}
+{{ detalle_post.titulo }}
+{% endblock titulo %}
+
+{% block imagen %}
+{% static 'img/post2.jpg' %}
+{% endblock imagen %}
+
+{% block titulo_principal %}
+<h1>{{ detalle_post.titulo }}</h1>
+<hr>
+<p>{{ detalle_post.descripcion }}<br><br>
+  <strong>Volumen:</strong>&nbsp; {{ detalle_post.volumen }} <br>
+  <strong>Ubicacion Física:</strong>&nbsp; {{ detalle_post.ubicacion }}
+</p>
+
+{% endblock titulo_principal %}
+
+{% block barra_busqueda %}
+{% endblock barra_busqueda %}
+
+{% block contenido %}
+{{ detalle_post.contenido | safe }}
+
+{% endblock contenido %}
